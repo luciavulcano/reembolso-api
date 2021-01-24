@@ -3,7 +3,7 @@
     <md-card md-with-hover class="cabecalho">
         <md-ripple>
           <md-card-header>
-            <h1 class="md-tile"> Reembolso #{{ info.data.id }} </h1>
+            <h1 class="md-title"> Reembolso #{{ info.data.id }} </h1>
           </md-card-header>
           <md-card-content>
             <section>
