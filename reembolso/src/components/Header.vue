@@ -5,7 +5,7 @@
           <md-card-header>
             <h1 class="md-title"> Reembolso #{{ info.data.id }} </h1>
           </md-card-header>
-          <md-card-content>
+          <md-card-content class="cabecalho__content">
             <section>
               <p>Nome: {{ info.data.collaborator.name }}</p>
               <p>Email: {{ info.data.collaborator.email }}</p>
@@ -14,7 +14,7 @@
               <p>Projeto: {{ info.data.project.title }}</p>
               <p>Data: </p>
               <p>Quantidade: {{ info.data.accountabilityExtraInfo.amountOfPeople }}</p>
-              <p> Inclui café da manhã:</p>
+              <p>Inclui café da manhã:</p>
             </section>
             <hr>
             <section>
@@ -55,20 +55,32 @@ export default {
   border-radius: .75rem;
 }
 hr{
-  color: #fffff;
+  color: #ffff;
+  width: 125px;
+}
+
+.cabecalho__content{
+  display: flex;
+  flex-direction: column;
 }
 
 .cabecalho__input{
   border-radius: .2rem;
   border: none;
+  height: 2rem;
+  padding: 0 1rem;
 }
 
 @media (min-width: 768px){
     hr {
     border: none;
-    border-left: 1px solid #fffff;
-    height: 100vh;
+    border-left: 1px solid;
+    height: 150px;
     width: 1px;
+  }
+  .cabecalho__content{
+    flex-direction: row;
+    justify-content: center;
   }
 }
 </style>
