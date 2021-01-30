@@ -1,26 +1,26 @@
 <template>
   <div>
     <md-card md-with-hover class="cabecalho">
-        <md-ripple>
+        <md-ripple class="cabecalho__riple">
           <md-card-header>
-            <h1 class="md-title"> Reembolso #{{ info.data.id }} </h1>
+            <h1 class="md-title"> Reembolso #{{ info.id }} </h1>
           </md-card-header>
           <md-card-content class="cabecalho__content">
             <section>
-              <p>Nome: {{ info.data.collaborator.name }}</p>
-              <p>Email: {{ info.data.collaborator.email }}</p>
+              <p>Nome: {{ info.collaborator.name }}</p>
+              <p>Email: {{ info.collaborator.email }}</p>
               <p>Justificativa: </p>
-              <p>Finalidade: {{ info.data.purpose }}</p>
-              <p>Projeto: {{ info.data.project.title }}</p>
+              <p>Finalidade: {{ info.purpose }}</p>
+              <p>Projeto: {{ info.project.title }}</p>
               <p>Data: </p>
-              <p>Quantidade: {{ info.data.accountabilityExtraInfo.amountOfPeople }}</p>
+              <p>Quantidade: {{ info.accountabilityExtraInfo.amountOfPeople }}</p>
               <p>Inclui café da manhã:</p>
             </section>
             <hr>
             <section>
             <p>Atribuir analista</p>
               <input placeholder="Atribuir analista" class="cabecalho__input">
-              <p>Centro de Custo: {{ info.data.costCenters.percentage}}</p>
+              <p>Centro de Custo: {{ info.costCenters.percentage}}</p>
             </section>
           </md-card-content>
         </md-ripple>
@@ -41,7 +41,7 @@ export default {
   mounted () {
     axios
       .get('https://api-front-end-challenge.buildstaging.com/api/header')
-      .then(response => (this.info = response))
+      .then(response => (this.info = response.data))
   }
 }
 </script>
@@ -58,10 +58,14 @@ hr{
   color: #ffff;
   width: 125px;
 }
-
+.cabecalho__riple{
+  display: flex;
+  flex-direction: column;
+}
 .cabecalho__content{
   display: flex;
   flex-direction: column;
+
 }
 
 .cabecalho__input{
@@ -69,6 +73,7 @@ hr{
   border: none;
   height: 2rem;
   padding: 0 1rem;
+  margin-bottom: 1rem;
 }
 
 @media (min-width: 768px){
@@ -80,7 +85,7 @@ hr{
   }
   .cabecalho__content{
     flex-direction: row;
-    justify-content: center;
+    align-items: center;
   }
 }
 </style>

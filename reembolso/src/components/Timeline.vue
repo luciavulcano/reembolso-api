@@ -140,7 +140,6 @@ import axios from 'axios'
 
 export default {
   name: 'Timeline',
-  
   data () {
     return {
       info: null,
@@ -195,12 +194,12 @@ export default {
   font-weight: 700;
 }
 .timeline__status--pendente{
-  color: white;
+  color: black;
   font-weight: 700;
   padding: 0 1rem;
   border-radius: 30px;
-  border: solid 3px yellow;
-  background-color: #EDC911;
+  border: solid 3px  #EDC911;
+  background-color: yellow;
   width: 50%;
   text-align: center;
 }

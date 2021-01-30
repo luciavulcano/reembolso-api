@@ -1,18 +1,23 @@
 <template>
   <div id="app">
-    <cabecalho/>
-    <timeline/>
+    <section >
+      <cabecalho/>
+      <timeline/>
+    </section>
+    <sidebar/>
   </div>
 </template>
 
 <script>
 import Cabecalho from './components/Header.vue'
 import Timeline from './components/Timeline.vue'
+import Sidebar from './components/Sidebar.vue'
 export default {
   name: 'App',
   components: {
     'cabecalho': Cabecalho,
-    'timeline': Timeline
+    'timeline': Timeline,
+    'sidebar': Sidebar
   }
 }
 </script>
@@ -22,6 +27,7 @@ export default {
 #app {
   font-family: 'Nunito Sans', sans-serif;
   margin-top: 2rem;
+  display: flex;
 }
 body{
   margin:0;
