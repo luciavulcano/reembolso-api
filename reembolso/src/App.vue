@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    <section >
+    <section class="app__section__order--um">
       <cabecalho/>
       <timeline/>
     </section>
-    <sidebar/>
+    <sidebar class="app__section__order--dois"/>
   </div>
 </template>
 
@@ -28,6 +28,8 @@ export default {
   font-family: 'Nunito Sans', sans-serif;
   margin-top: 2rem;
   display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 body{
   margin:0;
@@ -36,5 +38,24 @@ body{
 }
 p{
   margin:0;
+}
+
+.app__section__order--um{
+  order: 2;
+}
+.app__section__order--dois{
+  order: 1;
+}
+
+@media (min-width:768px){
+  #app{
+    flex-direction: row;
+  }
+  .app__section__order--um{
+    order: 1;
+  }
+  .app__section__order--dois{
+    order: 2;
+  }
 }
 </style>
