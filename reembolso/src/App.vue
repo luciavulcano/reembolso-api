@@ -49,8 +49,8 @@ p{
 }
 .app__section__order--dois{
   order: 1;
+  margin-bottom: 1rem;
 }
-
 @media (min-width:768px){
   #app{
     flex-direction: row;
