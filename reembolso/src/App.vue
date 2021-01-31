@@ -2,6 +2,7 @@
   <div id="app">
     <section class="app__section__order--um">
       <cabecalho/>
+      <despesa/>
       <timeline/>
     </section>
     <sidebar class="app__section__order--dois"/>
@@ -12,12 +13,15 @@
 import Cabecalho from './components/Header.vue'
 import Timeline from './components/Timeline.vue'
 import Sidebar from './components/Sidebar.vue'
+import AdicionarDespesas from './components/AdicionarDespesa.vue'
+
 export default {
   name: 'App',
   components: {
     'cabecalho': Cabecalho,
     'timeline': Timeline,
-    'sidebar': Sidebar
+    'sidebar': Sidebar,
+    'despesa': AdicionarDespesas
   }
 }
 </script>

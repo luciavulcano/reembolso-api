@@ -12,7 +12,7 @@
               <p>Justificativa: </p>
               <p>Finalidade: {{ info.purpose }}</p>
               <p>Projeto: {{ info.project.title }}</p>
-              <p>Data: </p>
+              <p>Data: {{ new Date(info.createdOn).toLocaleDateString("en-GB") }}</p>
               <p>Quantidade: {{ info.accountabilityExtraInfo.amountOfPeople }}</p>
               <p>Inclui café da manhã:</p>
             </section>

@@ -8,7 +8,7 @@
                 <path xmlns="http://www.w3.org/2000/svg" d="m583.75 434.375h-198.628906v-33.253906h207.050781c5.714844 0 11.296875-2.328125 15.320313-6.386719 4.078124-4.113281 6.292968-9.574219 6.238281-15.378906-.78125-77.828125-31.683594-150.875-87.011719-205.679688-55.371094-54.84375-128.78125-85.046875-206.71875-85.046875s-151.347656 30.203125-206.714844 85.046875c-55.332031 54.804688-86.230468 127.851563-87.015625 205.695313-.054687 5.789062 2.164063 11.25 6.238281 15.363281 4.023438 4.058594 9.605469 6.386719 15.320313 6.386719h207.050781v33.253906h-198.628906c-31.015625 0-56.25 25.234375-56.25 56.25s25.234375 56.25 56.25 56.25h527.5c31.015625 0 56.25-25.234375 56.25-56.25s-25.234375-56.25-56.25-56.25zm0 0" fill="#0f68bd" data-original="#000000" style=""/>
                 <path xmlns="http://www.w3.org/2000/svg" d="m320 51.128906c22.132812 0 43.898438 2.433594 64.992188 7.175782-2.144532-33.980469-30.476563-60.972657-64.992188-60.972657s-62.847656 26.992188-64.992188 60.972657c21.09375-4.742188 42.859376-7.175782 64.992188-7.175782zm0 0" fill="#0f68bd" data-original="#000000" style="" class=""/></g>
               </svg>
-              <p>Data:</p>
+              <p>{{ new Date(informacoes.cardDate).toLocaleDateString("en-GB") }} </p>
             </div>
             <div v-else-if="informacoes.cardType === 'EVALUATION'" class="timeline__header__div">
               <svg class="timeline__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="512" height="512" x="0" y="0" viewBox="0 0 511.999 511.999" style="enable-background:new 0 0 512 512" xml:space="preserve">
@@ -73,7 +73,7 @@
                         <g xmlns="http://www.w3.org/2000/svg">
                         </g>
               </svg>
-             <p>Data:</p>
+             <p>{{ new Date(informacoes.cardDate).toLocaleDateString("en-GB") }} </p>
             </div>
             <div v-else class="timeline__header__div">
               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="512" height="512" x="0" y="0" viewBox="0 0 438.529 438.529" style="enable-background:new 0 0 512 512" xml:space="preserve" class="timeline__icon"><g>
@@ -112,7 +112,7 @@
                       </g>
                       </g>
               </svg>
-              <p>Data:</p>
+              <p>{{ new Date(informacoes.cardDate).toLocaleDateString("en-GB") }} </p>
             </div>
           </md-card-header>
           <md-card-content v-bind="info" :key="info" class="timeline__content">
