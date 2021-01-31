@@ -1,21 +1,21 @@
 <template>
   <div>
     <md-card md-with-hover>
-        <md-ripple>
+        <md-ripple v-for="informacoes in info" v-bind="informacoes" :key="informacoes">
           <md-card-header class="sidebar__header" v-bind="info" :key="info">
             <div class="sidebar__header__titulo">Status</div>
-            <div v-if="info.accountabilityStatus === 'OPEN'" class="sidebar__header__subtitulo"  > Pendente </div>
+            <div v-if="informacoes.accountabilityStatus === 'OPEN'" class="sidebar__header__subtitulo"  > Pendente </div>
           </md-card-header>
 
-          <md-card-content v-for="informacoes in info" v-bind="informacoes" :key="informacoes" class="sidebar__content">
+          <md-card-content  class="sidebar__content">
             <section>
               <h2 class="sidebar__content__h2">Saldo</h2>
               <p>Extrato</p>
               <hr>
               <p>Descrição</p>
-              <p class="sidebar__content__p">Despesas declaradas: {{ informacoes.currency.symbol }} {{ informacoes.declared}}</p>
-              <p class="sidebar__content__p">Despesas aprovadas: {{ informacoes.currency.symbol }} {{informacoes.approved}}</p>
-              <p class="sidebar__content__p">Pagamento realizado: {{ informacoes.currency.symbol }} {{informacoes.received}}</p>
+              <p class="sidebar__content__p">Despesas declaradas: {{ informacoes.currency.symbol }} {{ formatPrice(informacoes.declared)}}</p>
+              <p class="sidebar__content__p">Despesas aprovadas: {{ informacoes.currency.symbol }} {{formatPrice(informacoes.approved)}}</p>
+              <p class="sidebar__content__p">Pagamento realizado: {{ informacoes.currency.symbol }} {{formatPrice(informacoes.received)}}</p>
             </section>
           </md-card-content>
 
@@ -34,6 +34,12 @@ export default{
   data () {
     return {
       info: null
+    }
+  },
+  methods: {
+    formatPrice (value) {
+      let val = (value / 1).toFixed(2).replace('.', ',')
+      return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')
     }
   },
   mounted () {
