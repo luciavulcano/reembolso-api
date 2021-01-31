@@ -51,7 +51,6 @@
                     <h3 for="data">Data*</h3>
                     <md-datepicker v-model="selectedDate" placeholder="Selecione a data" class="modal__form__input" />
                       <md-option value="Data">Data</md-option>
-                    </md-select>
                   </md-field>
                 </section>
               </div>
